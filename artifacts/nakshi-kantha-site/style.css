@@ -1,0 +1,243 @@
+/* Nakshi Kantha Craft Cluster Presentation
+   Earthy, traditional embroidery aesthetic */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+:root {
+  --cream: #F5F0E8;
+  --linen: #EDE6D9;
+  --terracotta: #C45C26;
+  --rust: #A0522D;
+  --indigo: #1A3A5F;
+  --deep-brown: #3E2723;
+  --warm-brown: #5D4037;
+  --soft-red: #8B4513;
+  --gold: #D4A574;
+  --text: #3E2723;
+  --muted: #6D5C54;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  background-color: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(196, 92, 38, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(26, 58, 95, 0.03) 0%, transparent 50%);
+}
+
+/* Subtle kantha-inspired stitch pattern overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20h40M20 0v40' stroke='%23C45C26' stroke-opacity='0.04' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: var(--deep-brown);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.1; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+h3 { font-size: 1.35rem; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header */
+.site-header {
+  padding: 3rem 0 2rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(62, 39, 35, 0.1);
+  margin-bottom: 2rem;
+}
+
+.site-header p.subtitle {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--terracotta);
+  color: white;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Cards for videos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0 3rem;
+}
+
+.video-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(62, 39, 35, 0.08);
+  border: 1px solid rgba(196, 92, 38, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(62, 39, 35, 0.12);
+}
+
+.video-card .qr-wrapper {
+  background: var(--linen);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-card img.qr {
+  width: 160px;
+  height: 160px;
+  border-radius: 8px;
+}
+
+.video-card h3 {
+  margin: 1.2rem 1rem 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.video-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 0 1.2rem;
+}
+
+.scan-hint {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: var(--terracotta);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* Video page specific */
+.video-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.video-page .content {
+  max-width: 520px;
+}
+
+.video-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+.video-page .technique {
+  color: var(--terracotta);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.player-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 40px rgba(62, 39, 35, 0.1);
+  border: 1px solid rgba(196, 92, 38, 0.2);
+  margin: 1.5rem 0;
+}
+
+.play-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--terracotta);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 4px 15px rgba(196, 92, 38, 0.3);
+}
+
+.play-button:hover {
+  background: #A84A1E;
+  transform: scale(1.03);
+}
+
+.play-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.back-link {
+  margin-top: 2rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  color: var(--terracotta);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(62, 39, 35, 0.08);
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .video-grid { gap: 1.5rem; }
+  .site-header { padding: 2rem 0 1.5rem; }
+}
